@@ -49,7 +49,8 @@ const AppNavbar = () => {
 				size='lg'
 				show={showModal}
 				onHide={() => setShowModal(false)}
-				aria-labelledby='signup-modal'>
+				aria-labelledby='signup-modal'
+			>
 				{/* tab container to do either signup or login component */}
 				<Tab.Container defaultActiveKey='login'>
 					<Modal.Header closeButton>

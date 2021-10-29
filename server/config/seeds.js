@@ -2,7 +2,8 @@ const db = require('./connection');
 const { User, Staff } = require('../models');
 
 db.once('open', async () => {
-  await Staff.deleteMany();
+    
+    await Staff.deleteMany();
 
     await Staff.insertMany([
         {
@@ -194,4 +195,3 @@ db.once('open', async () => {
 
     process.exit();
 });
-
