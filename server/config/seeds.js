@@ -101,7 +101,7 @@ db.once('open', async () => {
         {
             firstName: 'Spot',
             lastName: 'Jones',
-            email: 'jenny@email.com',
+            email: 'jenny1@email.com',
             title: 'dog companion'
         },
         {
@@ -129,66 +129,71 @@ db.once('open', async () => {
             lastName: 'Special',
             email: 'someone@email.com',
             password: '123456789',
-           
+            username: '1'
         },
         {
             firstName: 'Noone',
             lastName: 'Special',
             email: 'noone@email.com',
             password: '123456789',
-            
+            username: '2'
         },
         {
             firstName: 'Penny',
             lastName: 'Coin',
             email: 'penny@email.com',
             password: '123456789',
-            
+            username: '3'
         },
         {
             firstName: 'Twoe',
             lastName: 'Quarter',
             email: 'twoe@email.com',
             password: '123456789',
-            
+            username: '4'
         },
         {
             firstName: 'Fitty',
             lastName: 'Cent',
             email: 'fitty@email.com',
             password: '123456789',
-            
+            username: '5'
         },
         {
             firstName: 'Dollar',
             lastName: 'Bill',
             email: 'dollar@email.com',
-            password: '123456789'
+            password: '123456789',
+            username: '6'
         },
         {
             firstName: 'Jane',
             lastName: 'Doe',
             email: 'jane@email.com',
-            password: '123456789'
+            password: '123456789',
+            username: '7'
         },
         {
             firstName: 'Johnny',
             lastName: 'House',
             email: 'johnny@email.com',
-            password: '123456789'
+            password: '123456789',
+            username: '8'
         },
         {
             firstName: 'Suzie',
             lastName: 'Que',
             email: 'suzie@email.com',
-            password: '123456789'
+            password: '123456789',
+            username: '9'
         },
         {
             firstName: 'Jess',
             lastName: 'Eat',
             email: 'jess@email.com',
-            password: '123456789'
-        },
+            password: '123456789',
+            username: '10'
+        }
     ]);
 
     console.log('users seeded');
