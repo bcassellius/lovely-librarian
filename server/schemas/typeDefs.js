@@ -10,6 +10,16 @@ const typeDefs = gql`
 		savedBooks: [Book]
 	}
 
+	type Staff {
+		_id: ID
+		firstName: String
+		lastName: String
+		email: String
+		title: String
+		extension: Int
+		office: Int
+	}
+
 	type Book {
 		_id: ID
 		authors: [String!]
@@ -26,6 +36,7 @@ const typeDefs = gql`
 
 	type Query {
 		me: User
+		staff: Staff
 	}
 
 	type Mutation {

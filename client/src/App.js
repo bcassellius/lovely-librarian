@@ -6,6 +6,8 @@ import { setContext } from '@apollo/client/link/context';
 // components
 // import StaffSchedule from './components/StaffSchedule';
 // import RequestTimeOff from './components/RequestTimeOff';
+import StaffSearch from './components/StaffSearch';
+// pages
 import StaffDirectory from './pages/StaffDirectory';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
@@ -36,11 +38,14 @@ function App() {
 			<Router>
 				<>
 					<Navbar />
+					{/* Sidebar for itaff info - reference issue #17 Edit Staff Info - Edit Staff Info */}
+					{/* <Sidebar /> */}
 					<Switch>
 						<Route exact path='/' component={ SearchBooks } />
 						<Route exact path='/saved' component={ SavedBooks } />
 						{/* <Route exact path='/schedule' component={ StaffSchedule } /> */}
 						<Route exact path='/staff' component={ StaffDirectory } />
+						<Route exact path='/staff' component={ StaffSearch } />
 						{/* <Route exact path='/timeOffRequest' component={ RequestTimeOff } /> */}
 						<Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
 					</Switch>
