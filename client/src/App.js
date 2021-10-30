@@ -10,7 +10,7 @@ import StaffSearch from './components/StaffSearch';
 // pages
 import StaffDirectory from './pages/StaffDirectory';
 import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
+// import SavedBooks from './pages/SavedBooks';
 import Navbar from './pages/Navbar';
 import Schedule from './pages/Schedule';
 
@@ -43,7 +43,6 @@ function App() {
 					{/* <Sidebar /> */}
 					<Switch>
 						<Route exact path='/' component={ SearchBooks } />
-						{/* <Route exact path='/saved' component={ SavedBooks } /> */}
 						<Route exact path='/calendar' component={ Schedule } />
 						<Route exact path='/staff' component={ StaffDirectory } />
 						<Route exact path='/staff' component={ StaffSearch } />

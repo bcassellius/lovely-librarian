@@ -7,14 +7,14 @@ query me {
 		username
 		email
 		bookCount
-		savedBooks {
-			_id
-			authors
-			description
-			title
-			image
-			link
-		}
+		# savedBooks {
+		# 	_id
+		# 	authors
+		# 	description
+		# 	title
+		# 	image
+		# 	link
+		# }
 	}
 }
 `;
