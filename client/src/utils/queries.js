@@ -20,7 +20,8 @@ query me {
 `;
 
 export const QUERY_STAFF = gql`
-	query staff {
+	# query staff 
+	{
 		staff {
 			firstName
 			lastName

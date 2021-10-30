@@ -1,70 +1,84 @@
 import React, { useState } from 'react';
-// import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 // utils
-// import { QUERY_STAFF } from '../../utils/queries';
-
-// mock data
-import staffData from '../../utils/staffData';
+import { QUERY_STAFF } from '../../utils/queries';
 
 
 const StaffSearch = () => {
-    // const { loading, data } = useQuery(QUERY_STAFF);
-    // const staffData = data?.staff || [];
-
     const [searchFirstName, setSearchFirstName] = useState('');
     const [searchLastName, setSearchLastName] = useState('');
     const [searchTitle, setSearchTitle] = useState('');
 
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // };
+    const dataInput = searchFirstName.length > 0 || searchLastName.length > 0 || searchTitle.length > 0;
+
+    const { loading, data } = useQuery(QUERY_STAFF);
+    console.log(data);
+    const staffData = data?.staff || [];
+
+
+    if (loading) {
+        return <div>Loading...</div>;
+    };
         
     // <h4>You need to be logged in to see this page. Use the navigation links above to log in or signup!</h4>
 
     return (
         <div>
-            <div className="staffSearchInput">
-                <h2>First Name:</h2>
-                <input
-                    type="text"
-                    className="searchInput"
-                    placeholder="Staff Search by first name..."
-                    onChange={ event => { setSearchFirstName(event.target.value) } }
-                />
-            </div>
-            <div className="staffSearchInput">
-                <h2>Last Name:</h2>
-                <input
-                    type="text"
-                    className="searchInput"
-                    placeholder="Staff Search by last name..."
-                    onChange={ event => { setSearchLastName(event.target.value) } }
-                />
-            </div>
-            <div className="staffSearchInput">
-                <h2>Job Title:</h2>
-                <input
-                    type="text"
-                    className="searchInput"
-                    placeholder="Staff Search by job title..."
-                    onChange={ event => { setSearchTitle(event.target.value) } }
-                />
-            </div>
-            { staffData.filter((staffMembers) => {
-                if (searchFirstName === '' && searchLastName === '' && searchTitle === '') {
-                    return staffMembers
-                // filter by firstName
-                } else if (searchLastName === '' && searchTitle === '' && staffMembers.firstName.toLowerCase().includes(searchFirstName.toLowerCase())) {
-                    return staffMembers
-                // filter by lastName
-                } else if (searchFirstName === '' && searchTitle === '' && staffMembers.lastName.toLowerCase().includes(searchLastName.toLowerCase())) {
-                    return staffMembers
-                // filter by job title
-                } else if (searchFirstName === '' && searchLastName === '' && staffMembers.title.toLowerCase().includes(searchTitle.toLowerCase())) {
-                    return staffMembers
-                }
-                return staffMembers
+            { ((!dataInput) || (dataInput && searchFirstName.length > 0)) &&
+                <div className="staffSearchInput">
+                    <h2>First Name:</h2>
+                    <input
+                        type="text"
+                        className="searchInput"
+                        placeholder="Staff Search by first name..."
+                        onChange={ event => { setSearchFirstName(event.target.value) } }
+                    />
+                </div>
+            }
+            { ((!dataInput) || (dataInput && searchLastName.length > 0)) &&
+                <div className="staffSearchInput">
+                    <h2>Last Name:</h2>
+                    <input
+                        type="text"
+                        className="searchInput"
+                        placeholder="Staff Search by last name..."
+                        onChange={ event => { setSearchLastName(event.target.value) } }
+                    />
+                </div>
+            }
+            { ((!dataInput) || (dataInput && searchTitle.length > 0)) &&
+                <div className="staffSearchInput">
+                    <h2>Job Title:</h2>
+                    <input
+                        type="text"
+                        className="searchInput"
+                        placeholder="Staff Search by job title..."
+                        onChange={ event => { setSearchTitle(event.target.value) } }
+                    />
+                </div>
+            }
+            { staffData &&
+                staffData.filter((staffMembers) => {
+                    console.log('nick');
+                    if (searchFirstName === '' && searchLastName === '' && searchTitle === '') {
+                        return true;
+                    } else {
+                        // filter by firstName
+                        if (searchLastName === '' && searchTitle === '' && staffMembers.firstName.toLowerCase().includes(searchFirstName.toLowerCase()) && searchFirstName.length >= 1) {
+                            console.log('firstname search');
+                            return staffMembers
+                        // filter by lastName
+                        } else if (searchFirstName === '' && searchTitle === '' && staffMembers.lastName.toLowerCase().includes(searchLastName.toLowerCase())) {
+                            return staffMembers
+                        // filter by job title
+                        } else if (searchFirstName === '' && searchLastName === '' && staffMembers.title.toLowerCase().includes(searchTitle.toLowerCase())) {
+                            return staffMembers
+                        } else {
+                            console.log('default');
+                            return false
+                        }
+                    }
             }).map((staffMembers, key) => {
                 return (
                     <div className="staffMembers" key={key}>
