@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const staffSchema = new Schema({
 
@@ -20,12 +20,13 @@ const staffSchema = new Schema({
         type: String,
     },
     extension: {
-        type: Int,
+        type: Number,
     },
     office: {
-        type: Int,
-    },
-
+        type: Number,
+    }
 });
 
-module.exports = staffSchema;
+const Staff = model('Staff', staffSchema);
+
+module.exports = Staff;
