@@ -20,12 +20,11 @@ const staffSchema = new Schema({
         type: String,
     },
     extension: {
-        type: Int,
+        type: Number,
     },
     office: {
-        type: Int,
-    },
-
+        type: Number,
+    }
 });
 
 module.exports = staffSchema;

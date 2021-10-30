@@ -7,7 +7,7 @@ query me {
 		username
 		email
 		bookCount
-		savedBooks{
+		savedBooks {
 			_id
 			authors
 			description
@@ -17,4 +17,17 @@ query me {
 		}
 	}
 }
-`; 
+`;
+
+export const QUERY_STAFF = gql`
+	query staff($name: String!) {
+		staff(name: $name) {
+			_id
+			firstName
+			lastName
+			emailtitle
+			extension
+			officeNumber
+		}
+	}
+`;
