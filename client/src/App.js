@@ -6,7 +6,7 @@ import { setContext } from '@apollo/client/link/context';
 // components
 // import StaffSchedule from './components/StaffSchedule';
 // import RequestTimeOff from './components/RequestTimeOff';
-import StaffDirectory from './components/StaffDirectory';
+import StaffDirectory from './pages/StaffDirectory';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './pages/Navbar';
