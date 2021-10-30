@@ -17,7 +17,7 @@ const scheduleSchema = new Schema({
 	userId: {
 		type: String,
 		required: true,
-	},
+	}
 });
 
 module.exports = scheduleSchema;
