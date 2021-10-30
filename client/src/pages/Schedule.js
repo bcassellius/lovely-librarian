@@ -1,5 +1,12 @@
-//render scheduler component
+import React from "react";
+import Calendar from "../components/Calendar"; 
 
-    //JSX
+const Schedule = () => {
+    return (
+        <div>
+            <Calendar />
+        </div>
+    );
+}
 
-//save button functionality from workday scheduler --> set it as save button within compnent as state when it's clicked
+export default Schedule;
