@@ -1,4 +1,4 @@
-const { User, Book } = require("../models");
+const { User, Staff } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -15,6 +15,11 @@ const resolvers = {
 
 			throw new AuthenticationError("This user is not logged in.");
 		},
+		// get all staff
+		staff: async () => {
+			return Staff.find()
+				.select('-__v');
+		}
 	},
 	Mutation: {
 		// login to site, evaluate credentials, create token for user on successful evaluation

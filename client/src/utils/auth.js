@@ -12,7 +12,8 @@ class AuthService {
 	loggedIn() {
 		// Checks if there is a saved token and it's still valid
 		const token = this.getToken();
-		return !!token && !this.isTokenExpired(token); // handwaiving here
+		// usetype coersion to check if token is NOT undefined and the toklen is NOT expired
+		return !!token && !this.isTokenExpired(token);
 	}
 
 	// check if token is expired
