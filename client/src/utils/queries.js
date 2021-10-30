@@ -20,14 +20,14 @@ query me {
 `;
 
 export const QUERY_STAFF = gql`
-	query staff($name: String!) {
-		staff(name: $name) {
-			_id
+	query staff {
+		staff {
 			firstName
 			lastName
-			emailtitle
+			email
+			title
 			extension
-			officeNumber
+			office
 		}
 	}
 `;
