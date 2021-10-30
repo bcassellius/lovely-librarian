@@ -1,7 +1,8 @@
 import React from "react";
+import 'react-router-dom';
 
 
-const StaffDirectory = ({ staff, staffName }) => {
+const StaffList = ({ staff, staffName }) => {
 
     if(!staff || !staff.length) {
         return <p className="bg-dark text-light p-3">No Staff members added yet!</p>
@@ -54,4 +55,4 @@ const StaffDirectory = ({ staff, staffName }) => {
 }
 
 // exporting... ... ...
-export default StaffDirectory;
+export default StaffList;
