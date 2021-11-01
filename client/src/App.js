@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
+import { ChakraProvider } from "@chakra-ui/react"
 
 // components
 // import StaffSchedule from './components/StaffSchedule';
@@ -33,8 +34,9 @@ const client = new ApolloClient({
 	cache: new InMemoryCache(),
 });
 
-function App() {
+function App({ Component }) {
 	return (
+		<ChakraProvider>
 		<ApolloProvider client={client}>
 			<Router>
 				<>
@@ -52,6 +54,8 @@ function App() {
 				</>
 			</Router>
 		</ApolloProvider>
+		<Component/>
+		</ChakraProvider>
 	);
 }
 
