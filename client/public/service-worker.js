@@ -1,4 +1,4 @@
-const APP_PREFIX = 'Budget Event-';     
+const APP_PREFIX = 'Lovely Librarian';     
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION
 const FILES_TO_CACHE = [
@@ -8,6 +8,7 @@ const FILES_TO_CACHE = [
 "/icons/books-120-184800.png",
 "/icons/books-152-184800.png",
 "/icons/favicon.ico",
+"/icons/person.png",
 "/icons/readme.txt",
 "/index.html",
 "/manifest.json",
