@@ -1,5 +1,10 @@
 # The greatest Librarian's app the internet has ever seen. 
 
+### Deployed url
+
+### Github Repository
+https://github.com/bcassellius/lovely-librarian.git
+
 ### Technologies and Packages Used:
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
