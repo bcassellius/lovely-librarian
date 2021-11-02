@@ -45,36 +45,6 @@ const resolvers = {
 
 			return { token, user };
 		}
-		// saveBook: async (parent, args, context) => {
-		// 	if (context.user) {
-		// 		// const book = await Book.create({ ...args, username: context.user.username });
-		
-		// 		const userUpdate = await User.findByIdAndUpdate(
-		// 			{ _id: context.user._id },
-		// 			{ $push: { savedBooks: args.bookData } },
-		// 			{ new: true }
-		// 		);
-		
-		// 		return userUpdate;
-		// 	}
-		
-		// 	throw new AuthenticationError('You can only save books if logged in!');
-		// },
-		// removeBook: async (parent, args, context) => {
-		// 	if (context.user) {
-		// 		// const book = await Book.remove({ ...args, username: context.user.username });
-		
-		// 		const userUpdate = await User.findByIdAndUpdate(
-		// 			{ _id: context.user._id },
-		// 			{ $pull: { savedBooks: { bookId: args.bookId } } },
-		// 			{ new: true }
-		// 		);
-		
-		// 		return userUpdate;
-		// 	}
-		
-		// 	throw new AuthenticationError('You can only remove books if logged in!');
-		// },
 	}
 };
 

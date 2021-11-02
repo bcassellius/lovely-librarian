@@ -20,7 +20,6 @@ const StaffSearch = () => {
         return <div>Loading...</div>;
     };
         
-    // <h4>You need to be logged in to see this page. Use the navigation links above to log in or signup!</h4>
 
     return (
         <div>
@@ -72,7 +71,7 @@ const StaffSearch = () => {
                         } else if (searchFirstName === '' && searchLastName === '' && staffMembers.title.toLowerCase().includes(searchTitle.toLowerCase())) {
                             return staffMembers
                         } else {
-                            return false
+                            return false;
                         }
                     }
             }).map((staffMembers, key) => {
