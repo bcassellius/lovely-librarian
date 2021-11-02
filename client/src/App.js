@@ -7,7 +7,6 @@ import {
 } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
-import { ChakraProvider } from "@chakra-ui/react";
 
 // components
 // import StaffSchedule from './components/StaffSchedule';
@@ -41,7 +40,6 @@ const client = new ApolloClient({
 
 function App({ Component }) {
   return (
-    <ChakraProvider>
       <ApolloProvider client={client}>
         <Router>
           <>
@@ -61,8 +59,6 @@ function App({ Component }) {
           </>
         </Router>
       </ApolloProvider>
-      <Component />
-    </ChakraProvider>
   );
 }
 
