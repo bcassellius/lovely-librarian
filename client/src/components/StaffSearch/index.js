@@ -13,7 +13,6 @@ const StaffSearch = () => {
     const dataInput = searchFirstName.length > 0 || searchLastName.length > 0 || searchTitle.length > 0;
 
     const { loading, data } = useQuery(QUERY_STAFF);
-    console.log(data);
     const staffData = data?.staff || [];
 
 
@@ -60,13 +59,11 @@ const StaffSearch = () => {
             }
             { staffData &&
                 staffData.filter((staffMembers) => {
-                    console.log('nick');
                     if (searchFirstName === '' && searchLastName === '' && searchTitle === '') {
                         return true;
                     } else {
                         // filter by firstName
                         if (searchLastName === '' && searchTitle === '' && staffMembers.firstName.toLowerCase().includes(searchFirstName.toLowerCase()) && searchFirstName.length >= 1) {
-                            console.log('firstname search');
                             return staffMembers
                         // filter by lastName
                         } else if (searchFirstName === '' && searchTitle === '' && staffMembers.lastName.toLowerCase().includes(searchLastName.toLowerCase())) {
@@ -75,7 +72,6 @@ const StaffSearch = () => {
                         } else if (searchFirstName === '' && searchLastName === '' && staffMembers.title.toLowerCase().includes(searchTitle.toLowerCase())) {
                             return staffMembers
                         } else {
-                            console.log('default');
                             return false
                         }
                     }

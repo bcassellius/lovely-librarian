@@ -18,9 +18,7 @@ const resolvers = {
 		// get all staff
 		staff: async () => {
 			let result = await Staff.find({});
-			console.log(result);
 			return result;
-				// .select('-__v');
 		}
 	},
 	Mutation: {
