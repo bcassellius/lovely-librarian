@@ -29,9 +29,6 @@ const AppNavbar = () => {
 									<Nav.Link as={Link} to='/calendar'>
 										View Calendar
 									</Nav.Link>
-									<Nav.Link as={Link} to='/timeOff'>
-										Request Time Off
-									</Nav.Link>
 									<Nav.Link as={Link} to='/staff'>
 										Staff Directory
 									</Nav.Link>
