@@ -49,7 +49,23 @@ function Calendar() {
     {
       title: "10a Story Time",
       start: "2021-11-24"
-    }
+    },
+    {
+      title: "12p Lunch with Lovely Librarian",
+      start: "2021-11-25"
+    },
+    {
+      title: "Story Time With Santa",
+      start: "2021-11-30"
+    },
+    {
+      title: "6p P.J. Story Time",
+      start: "2021-12-03"
+    },
+    {
+      title: "6p Book Club",
+      start: "2021-12-12"
+    },
   ]
   return (
     <FullCalendar
