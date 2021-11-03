@@ -12,6 +12,7 @@
   },
   "keywords": [],
   "author": "",
+  "license": "MIT",
   "dependencies": {
     "concurrently": "^6.3.0"
   }

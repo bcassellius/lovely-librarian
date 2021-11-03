@@ -1,0 +1,74 @@
+li {
+    list-style-type: none;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 500px;
+    border-radius: 5px;  
+    margin: 10px;
+    padding:10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 10px;
+    padding:10px;
+    text-align:center;
+}
+
+.staffMembersName {
+    margin: 10px;
+    padding:10px;
+}
+
+.container {
+    padding: 2px 16px;
+    margin: 10px;
+}
+    
+.searching {
+    padding: 2px;
+    margin: 10px; 
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #17a2b8;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.label {
+    margin-top: 2em;
+}
+
+.staffSearchContainer {
+    display: inline-block;
+    border-radius: 20px;
+    color: white;
+    background-color: #17a2b8;
+    padding: 20px;
+    width:100%;
+    max-width: 800px;
+    text-align: left;
+}

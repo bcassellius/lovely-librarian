@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import './style.css'
 
 // utils
 import { QUERY_STAFF } from '../../utils/queries';
@@ -22,40 +23,45 @@ const StaffSearch = () => {
         
 
     return (
-        <div>
-            { ((!dataInput) || (dataInput && searchFirstName.length > 0)) &&
-                <div className="staffSearchInput">
-                    <h2>First Name:</h2>
-                    <input
-                        type="text"
-                        className="searchInput"
-                        placeholder="Staff Search by first name..."
-                        onChange={ event => { setSearchFirstName(event.target.value) } }
-                    />
-                </div>
-            }
-            { ((!dataInput) || (dataInput && searchLastName.length > 0)) &&
-                <div className="staffSearchInput">
-                    <h2>Last Name:</h2>
-                    <input
-                        type="text"
-                        className="searchInput"
-                        placeholder="Staff Search by last name..."
-                        onChange={ event => { setSearchLastName(event.target.value) } }
-                    />
-                </div>
-            }
-            { ((!dataInput) || (dataInput && searchTitle.length > 0)) &&
-                <div className="staffSearchInput">
-                    <h2>Job Title:</h2>
-                    <input
-                        type="text"
-                        className="searchInput"
-                        placeholder="Staff Search by job title..."
-                        onChange={ event => { setSearchTitle(event.target.value) } }
-                    />
-                </div>
-            }
+        <div className='text-info searching'>
+                
+            <div className='staffSearchContainer'>
+                <h1 className="center">Staff Search </h1>
+                { ((!dataInput) || (dataInput && searchFirstName.length > 0)) &&
+                    <div className="staffSearchInput">
+                        <h4>First Name:</h4>
+                        <input
+                            type="text"
+                            className="searchInput border-info text-info"
+                            placeholder="Staff Search by first name..."
+                            onChange={ event => { setSearchFirstName(event.target.value) } }
+                        />
+                    </div>
+                }
+                { ((!dataInput) || (dataInput && searchLastName.length > 0)) &&
+                    <div className="staffSearchInput">
+                        <h4>Last Name:</h4>
+                        <input
+                            type="text"
+                            className="searchInput border-info text-info"
+                            placeholder="Staff Search by last name..."
+                            onChange={ event => { setSearchLastName(event.target.value) } }
+                        />
+                    </div>
+                }
+                { ((!dataInput) || (dataInput && searchTitle.length > 0)) &&
+                    <div className="staffSearchInput">
+                        <h4>Job Title:</h4>
+                        <input
+                            type="text"
+                            className="searchInput border-info text-info"
+                            placeholder="Staff Search by job title..."
+                            onChange={ event => { setSearchTitle(event.target.value) } }
+                        />
+                    </div>
+                }
+            </div>
+            <h1 className="label"> Staff </h1>
             { staffData &&
                 staffData.filter((staffMembers) => {
                     if (searchFirstName === '' && searchLastName === '' && searchTitle === '') {
@@ -76,8 +82,9 @@ const StaffSearch = () => {
                     }
             }).map((staffMembers, key) => {
                 return (
-                    <div className="staffMembers" key={key}>
-                        <div className="staffMembersName">
+                    <div className="card staffMembers" key={key}>
+                        <img src="../../../icons/person.png" alt="Avatar" />
+                        <div className="staffMembersName bg-info text-white font-weight-bold">
                             { staffMembers.firstName + ' ' + staffMembers.lastName }
                         </div>
                         <div className="infoContainer">

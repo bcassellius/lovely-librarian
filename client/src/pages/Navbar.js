@@ -12,7 +12,7 @@ const AppNavbar = () => {
 
 	return (
 		<>
-			<Navbar bg='dark' variant='dark' expand='lg'>
+			<Navbar bg='info' variant='dark' expand='lg'>
 				<Container fluid>
 					<Navbar.Brand as={Link} to='/' c>
 						Lovely Librarian
@@ -54,20 +54,20 @@ const AppNavbar = () => {
 						<Modal.Title id='signup-modal'>
 							<Nav variant='pills'>
 								<Nav.Item>
-									<Nav.Link eventKey='login'>Login</Nav.Link>
+									<Nav.Link eventKey='login'className='text-info bg-light'>Login</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
-									<Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+									<Nav.Link eventKey='signup' className='text-info bg-light'>Sign Up</Nav.Link>
 								</Nav.Item>
 							</Nav>
 						</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<Tab.Content>
-							<Tab.Pane eventKey='login'>
+							<Tab.Pane eventKey='login' className='text-info'>
 								<LoginForm handleModalClose={() => setShowModal(false)} />
 							</Tab.Pane>
-							<Tab.Pane eventKey='signup'>
+							<Tab.Pane eventKey='signup' className='text-info'>
 								<SignUpForm handleModalClose={() => setShowModal(false)} />
 							</Tab.Pane>
 						</Tab.Content>
