@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import daygridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timegridPlugin from '@fullcalendar/timegrid';
 
 function Calendar() {
+  const [title, setTitle] = useState ({
+    title: "",
+    date: ""
+  })
   const handleDateClick = (dateClickInfo)=>{
-    alert(`🚧 Under Construction 🚧
+    const eventTitle = prompt(`🚧 Under Construction 🚧
     You can't add new events just yet...
     
     ` 
     + `You clicked on `+ dateClickInfo.dateStr);
+    console.log(eventTitle)
+    setTitle({title: eventTitle, date: dateClickInfo.dateStr})
   }
-
   const data = [
     {
       title: "3p Teen Movie",
@@ -119,7 +124,8 @@ function Calendar() {
       start: "2021-12-12"
     },
   ]
-  return (
+  return ( <>
+  {data.push(title)}
     <FullCalendar
     events={data}
     plugins={[daygridPlugin, timegridPlugin, interactionPlugin]} 
@@ -128,7 +134,7 @@ function Calendar() {
     titleColor='#17a2b8' 
     eventColor='#17a2b8'
     dateClick={handleDateClick}
-    />
+    /></>
   );
 }
 
