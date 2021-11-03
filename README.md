@@ -8,7 +8,7 @@
 - [Deployed Application](#deployed-application)
 - [Screenshot](#screenshot)
 - [License](#license)
-- [Credits](#credits)
+- [Credits](#credits-by)
 - [Questions, Comments, Suggestions](#questions-comments-suggestions)
 
 
@@ -32,7 +32,7 @@
 ## License
 [![license-MIT-blue.png](https://img.shields.io/badge/license-MIT-blue)](#License)
 
-## Credits
+## Credits By
 ### Developed By
 - [Bri Cassellius](https://github.com/bcassellius)
 - [Z Kaoher](https://github.com/kaohzina)
