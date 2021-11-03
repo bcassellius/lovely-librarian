@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import './style.css'
+import './style.css';
 
 // utils
 import { QUERY_STAFF } from '../../utils/queries';
