@@ -120,15 +120,16 @@ function Calendar() {
     },
   ]
   return (
-    <FullCalendar
-    events={data}
-    plugins={[daygridPlugin, timegridPlugin, interactionPlugin]} 
-    editable={true}
-    selectable={true}  
-    titleColor='#17a2b8' 
-    eventColor='#17a2b8'
-    dateClick={handleDateClick}
-    />
+    <>
+      <FullCalendar
+        events={data}
+        plugins={[daygridPlugin, timegridPlugin, interactionPlugin]}
+        editable={true}
+        selectable={true}
+        eventColor='#17a2b8'
+        dateClick={handleDateClick}
+      />
+    </>
   );
 }
 
