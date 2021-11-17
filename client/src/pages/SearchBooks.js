@@ -22,7 +22,7 @@ const SearchBooks = () => {
 			const response = await searchGoogleBooks(searchInput);
 
 			if (!response.ok) {
-				throw new Error('something went wrong!');
+				throw new Error('Something went wrong!');
 			}
 
 			const { items } = await response.json();
@@ -46,7 +46,7 @@ const SearchBooks = () => {
 	return (
 		<>
 			<Jumbotron fluid className='text-light bg-info'>
-				<Container>
+				<Container fluid>
 					{/* if user is logged in show search books and logout */}
 					{Auth.loggedIn() ? (
 						<>
@@ -64,7 +64,7 @@ const SearchBooks = () => {
 										/>
 									</Col>
 									<Col xs={12} md={4}>
-										<Button type='submit' className= "text-white bg-info border-light"  size='lg'>
+										<Button type='submit' className= "text-white bg-info border-light btn-dark"  size='lg'>
 											Search
 										</Button>
 									</Col>
@@ -77,7 +77,7 @@ const SearchBooks = () => {
 				</Container>
 			</Jumbotron>
 
-			<Container>
+			<Container fluid>
 				{/* if user is logged in show search books and logout */}
 				{Auth.loggedIn() ? (
 					<>
@@ -90,10 +90,10 @@ const SearchBooks = () => {
 				) : (
 					<h4>📚 Please log in to begin.📚</h4>
 				)}
-				<CardColumns>
+				<CardColumns >
 					{searchedBooks.map((book) => {
 						return (
-							<Card key={book.bookId} border='dark'>
+							<Card key={book.bookId} border='info'>
 								{book.image ? (
 									<Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
 								) : null}
