@@ -38,7 +38,7 @@ function App() {
 						<Route exact path='/' component={ SearchBooks } />
 						<Route exact path='/calendar' component={ Schedule } />
 						<Route exact path='/staff' component={ StaffDirectory } />
-						{/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
+						<Route render={() => <h3>Oops. This page isn't the right one.  Try navigating to another page.</h3>} />
 					</Switch>
 				</>
 			</Router>
