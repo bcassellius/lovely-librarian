@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { searchGoogleBooks } from '../utils/API';
+import Auth from '../utils/auth';
 
 const SearchBooks = () => {
 	// create state for holding returned google api data
@@ -46,35 +47,49 @@ const SearchBooks = () => {
 		<>
 			<Jumbotron fluid className='text-light bg-info'>
 				<Container>
-					<h1>Look for books in the lovely database!</h1>
-					<Form onSubmit={handleFormSubmit}>
-						<Form.Row>
-							<Col xs={12} md={8}>
-								<Form.Control
-									name='searchInput'
-									value={searchInput}
-									onChange={(e) => setSearchInput(e.target.value)}
-									type='text'
-									size='lg'
-									placeholder='Book Title'
-								/>
-							</Col>
-							<Col xs={12} md={4}>
-								<Button type='submit' className= "text-white bg-info border-light"  size='lg'>
-									Search
-								</Button>
-							</Col>
-						</Form.Row>
-					</Form>
+					{/* if user is logged in show search books and logout */}
+					{Auth.loggedIn() ? (
+						<>
+							<h1>Look for books in the lovely database!</h1>
+							<Form onSubmit={handleFormSubmit}>
+								<Form.Row>
+									<Col xs={12} md={8}>
+										<Form.Control
+											name='searchInput'
+											value={searchInput}
+											onChange={(e) => setSearchInput(e.target.value)}
+											type='text'
+											size='lg'
+											placeholder='Book Title'
+										/>
+									</Col>
+									<Col xs={12} md={4}>
+										<Button type='submit' className= "text-white bg-info border-light"  size='lg'>
+											Search
+										</Button>
+									</Col>
+								</Form.Row>
+							</Form>
+						</>
+					) : (
+						<h1>Welcome to Lovely Librarian, your library toolkit!</h1> 
+					)}
 				</Container>
 			</Jumbotron>
 
 			<Container>
-				<h2>
-					{searchedBooks.length
-						? `Viewing ${searchedBooks.length} results:`
-						: '📚 No Results Yet 📚'}
-				</h2>
+				{/* if user is logged in show search books and logout */}
+				{Auth.loggedIn() ? (
+					<>
+						<h2>
+							{searchedBooks.length
+								? `Viewing ${searchedBooks.length} results:`
+								: '📚 No Results Yet 📚'}
+						</h2>
+					</>
+				) : (
+					<h4>📚 Please log in to begin.📚</h4>
+				)}
 				<CardColumns>
 					{searchedBooks.map((book) => {
 						return (
