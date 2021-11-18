@@ -18,7 +18,14 @@ function Calendar() {
     console.log(eventTitle)
     setTitle({title: eventTitle, date: dateClickInfo.dateStr})
   }
+  
   const data = [
+    {
+      title: 'Testing Events', //has colored background if time is not declared (all day event)
+      start  : '2021-11-01T13:30:00', //Start time format is --> T hh : mm --> T12:30 (24h)
+      allDay : false, //Makes the even show the start time  
+      color: '#17a2b8', //changes the color of the dot --> '#e83e8c' would make a hot pink dot
+    },
     {
       title: "3p Teen Movie",
       start: "2021-10-15"
@@ -72,8 +79,10 @@ function Calendar() {
       start: "2021-10-27"
     },
     {
-      title: "11a Staff Meeting",
-      start: "2021-11-01"
+      title: "Staff Meeting",
+      start: "2021-11-01T11:00",
+      allDay: false,
+      color: '#e83e8c',
     },
     {
       title: "10a Story Time",
@@ -100,6 +109,11 @@ function Calendar() {
       start: "2021-11-17"
     },
     {
+      title: 'baby playdates and songs',
+      start  : '2021-11-04T12:30:00',
+      allDay : false
+    },
+    {
       title: "5p Poetry Slam",
       start: "2021-11-18"
     },
@@ -123,6 +137,66 @@ function Calendar() {
       title: "6p Book Club",
       start: "2021-12-12"
     },
+    {
+      title: 'baby playdates and songs', 
+      start  : '2021-11-11T12:30:00', 
+      allDay : false,       
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-11-18T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-11-25T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-12-02T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-12-09T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-12-16T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-12-23T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'baby playdates and songs',
+      start  : '2021-12-30T12:30:00',
+      allDay : false
+    },
+    {
+      title: 'Dads and Donuts',
+      start  : '2021-11-07T11:15:00',
+      allDay : false
+    },
+    {
+      title: 'Dads and Donuts',
+      start  : '2021-11-21T11:15:00',
+      allDay : false
+    },
+    {
+      title: 'Moms and Macaroni',
+      start  : '2021-11-14T11:15:00',
+      allDay : false
+    },
+    {
+      title: 'Moms and Macaroni',
+      start  : '2021-11-28T11:15:00',
+      allDay : false
+    }
   ]
   return (
     <>
