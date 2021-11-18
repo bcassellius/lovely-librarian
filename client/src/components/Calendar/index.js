@@ -15,8 +15,8 @@ function Calendar() {
     
     ` 
     + `You clicked on `+ dateClickInfo.dateStr);
-    console.log(eventTitle)
-    setTitle({title: eventTitle, date: dateClickInfo.dateStr})
+    // console.log(eventTitle)
+    // setTitle({title: eventTitle, date: dateClickInfo.dateStr})
   }
   
   const data = [
@@ -200,6 +200,7 @@ function Calendar() {
   ]
   return (
     <>
+    {/* {data.push(title)} */}
       <FullCalendar
         events={data}
         plugins={[daygridPlugin, timegridPlugin, interactionPlugin]}
