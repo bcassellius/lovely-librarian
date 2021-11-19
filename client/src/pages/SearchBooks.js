@@ -88,7 +88,7 @@ const SearchBooks = () => {
 						</h2>
 					</>
 				) : (
-					<h4>📚 Please log in to begin.📚</h4>
+					<h4><span role="img" aria-label="Book Emoji">📚</span> Please log in to begin.<span role="img" aria-label="Book Emoji">📚</span></h4>
 				)}
 				<CardColumns>
 					{searchedBooks.map((book) => {
